@@ -20,12 +20,13 @@ Several scripts in this repository have been tested and used in production after
 
 | Script | Purpose | Type | Production status |
 |---|---|---|---|
-| `Secure_Boot_Issue_Checker - Local` | Detects Secure Boot, UEFI, certificate/key, and related readiness issues. Designed to produce automation-friendly output without boolean-output issues. | Detection | *** |
-| `SecureBoot_Remediation_AllInOne_v3.4` | Performs Secure Boot diagnostics and remediation actions for supported scenarios. Intended to pair with the Secure Boot issue checker. | Remediation | Production tested, Mass-deployed |
-| `UEFI_CA_2023_Checker` | Checks readiness/status related to the 2023 UEFI CA and Secure Boot certificate updates. | Detection | Production tested, Mass-deployed |
-| `UEFI_or_Legacy_Checker` | Identifies whether a Windows device is using UEFI or Legacy BIOS boot mode. | Detection | Production tested, Mass-deployed |
-| `Device_Uptime_Checker - 1.0` | Reports Windows uptime, last boot time, and current system time. | Reporting | Production tested, Mass-deployed |
-| `DTU_Dynamic-Target-Uninstaller_V1` | Dynamically detects and removes targeted applications without relying only on a fixed MSI product code. | Remediation | Production tested, Mass-deployed |
+| `Secure_Boot_Issue_Checker - Local` | Detects Secure Boot, UEFI, certificate/key, and related readiness issues. Designed to produce automation-friendly output without boolean-output issues. Successor to `Secure_Boot_Checker_V2`. | Detection | Production tested, used for manual verification |
+| `Secure_Boot_Checker_V2.ps1` | Earlier iteration of the Secure Boot detection logic. Superseded by `Secure_Boot_Issue_Checker - Local`, which was created to resolve its boolean-output validity issue. | Detection | Legacy, superseded |
+| `SecureBoot_Remediation_AllInOne_v3.4.ps1` | Performs Secure Boot diagnostics and remediation actions for supported scenarios. Intended to pair with the Secure Boot issue checker. | Remediation | Production tested, mass-deployed |
+| `UEFI_CA_2023_Checker.ps1` | Checks readiness/status related to the 2023 UEFI CA and Secure Boot certificate updates. | Detection | Production tested, mass-deployed |
+| `UEFI_or_Legacy_Checker.ps1` | Identifies whether a Windows device is using UEFI or Legacy BIOS boot mode. | Detection | Production tested, mass-deployed |
+| `Device_Uptime_Checker - 1.0.ps1` | Reports Windows uptime, last boot time, and current system time. | Reporting | Production tested, mass-deployed |
+| `DTU_Dynamic-Target-Uninstaller_V1.ps1` | Dynamically detects and removes targeted applications without relying only on a fixed MSI product code. | Remediation | Production tested, mass-deployed |
 
 ---
 
@@ -39,15 +40,15 @@ Use the following scripts to identify device state and determine whether remedia
 
 - `UEFI_or_Legacy_Checker.ps1`
 - `UEFI_CA_2023_Checker.ps1`
-- `Experimental_Secure_Boot_Issue_Checker.ps1`
+- `Secure_Boot_Issue_Checker - Local`
 
-`Experimental_Secure_Boot_Issue_Checker.ps1` was created to avoid a previous output-validity issue caused by boolean values. Its output is intended to be more reliable for automation, parsing, and endpoint-management workflows.
+`Secure_Boot_Issue_Checker - Local` is the renamed successor of the earlier experimental issue checker and of `Secure_Boot_Checker_V2`. It was created to avoid a previous output-validity issue caused by boolean values, so its output is more reliable for automation, parsing, and endpoint-management workflows. Unlike the mass-deployed scripts, this checker has been used manually for device verification rather than broad automated deployment.
 
 ### 2. Remediate
 
 Use:
 
-- `SecureBoot_Remediation_AllInOne_v3.4_FullReadable.ps1`
+- `SecureBoot_Remediation_AllInOne_v3.4.ps1`
 
 This script is intended for devices identified by the detection stage. Because Secure Boot remediation can involve higher-risk actions, including configuration and boot-related changes, it should be deployed only after validation against the target hardware, firmware, Windows version, and security baseline.
 
