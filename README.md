@@ -20,12 +20,12 @@ Several scripts in this repository have been tested and used in production after
 
 | Script | Purpose | Type | Production status |
 |---|---|---|---|
-| `Experimental_Secure_Boot_Issue_Checker.ps1` | Detects Secure Boot, UEFI, certificate/key, and related readiness issues. Designed to produce automation-friendly output without boolean-output issues. | Detection | Production tested |
-| `SecureBoot_Remediation_AllInOne_v3.4_FullReadable.ps1` | Performs Secure Boot diagnostics and remediation actions for supported scenarios. Intended to pair with the Secure Boot issue checker. | Remediation | Production tested |
-| `UEFI_CA_2023_Checker.ps1` | Checks readiness/status related to the 2023 UEFI CA and Secure Boot certificate updates. | Detection | Production tested |
-| `UEFI_or_Legacy_Checker.ps1` | Identifies whether a Windows device is using UEFI or Legacy BIOS boot mode. | Detection | Production tested |
-| `Device_Uptime_Checker - 1.0.ps1` | Reports Windows uptime, last boot time, and current system time. | Reporting | Production tested |
-| `DTU_Dynamic-Target-Uninstaller_V1.ps1` | Dynamically detects and removes targeted applications without relying only on a fixed MSI product code. | Remediation | Production tested |
+| `Secure_Boot_Issue_Checker - Local` | Detects Secure Boot, UEFI, certificate/key, and related readiness issues. Designed to produce automation-friendly output without boolean-output issues. | Detection | Production tested |
+| `SecureBoot_Remediation_AllInOne_v3.4` | Performs Secure Boot diagnostics and remediation actions for supported scenarios. Intended to pair with the Secure Boot issue checker. | Remediation | Production tested, Mass-deployed |
+| `UEFI_CA_2023_Checker` | Checks readiness/status related to the 2023 UEFI CA and Secure Boot certificate updates. | Detection | Production tested, Mass-deployed |
+| `UEFI_or_Legacy_Checker` | Identifies whether a Windows device is using UEFI or Legacy BIOS boot mode. | Detection | Production tested, Mass-deployed |
+| `Device_Uptime_Checker - 1.0` | Reports Windows uptime, last boot time, and current system time. | Reporting | Production tested, Mass-deployed |
+| `DTU_Dynamic-Target-Uninstaller_V1` | Dynamically detects and removes targeted applications without relying only on a fixed MSI product code. | Remediation | Production tested, Mass-deployed |
 
 ---
 
