@@ -20,7 +20,7 @@ Several scripts in this repository have been tested and used in production after
 
 | Script | Purpose | Type | Production status |
 |---|---|---|---|
-| `Secure_Boot_Issue_Checker - Local` | Detects Secure Boot, UEFI, certificate/key, and related readiness issues. Designed to produce automation-friendly output without boolean-output issues. | Detection | Production tested |
+| `Secure_Boot_Issue_Checker - Local` | Detects Secure Boot, UEFI, certificate/key, and related readiness issues. Designed to produce automation-friendly output without boolean-output issues. | Detection | *** |
 | `SecureBoot_Remediation_AllInOne_v3.4` | Performs Secure Boot diagnostics and remediation actions for supported scenarios. Intended to pair with the Secure Boot issue checker. | Remediation | Production tested, Mass-deployed |
 | `UEFI_CA_2023_Checker` | Checks readiness/status related to the 2023 UEFI CA and Secure Boot certificate updates. | Detection | Production tested, Mass-deployed |
 | `UEFI_or_Legacy_Checker` | Identifies whether a Windows device is using UEFI or Legacy BIOS boot mode. | Detection | Production tested, Mass-deployed |
